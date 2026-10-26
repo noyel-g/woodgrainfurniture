@@ -305,3 +305,8 @@ footer .nav-logo{color:#fff9ed!important;font:22px 'DM Serif Display',serif}
 .products-empty-state>p:not(.section-label){font-size:11px;color:#888071;margin-bottom:20px}
 .products-empty-state .btn{font-size:10px}
 @media(max-width:700px){.cat-filter-list{display:flex;flex-wrap:wrap;gap:6px}.cat-filter-list>li{width:auto}.cat-filter-item{width:auto}.cat-filter-item .count{margin-left:5px}}
+
+.footer-socials{display:flex;align-items:center;gap:12px}
+.footer-contact-link{display:inline-flex;align-items:center;gap:8px;border:1px solid #d9c9b3;padding:10px 13px;color:#f1e8da;font-size:10px;letter-spacing:0;transition:background .2s,border-color .2s}
+.footer-contact-link:hover{background:#3b4b3b;border-color:#8da087;color:#fffdf6}
+@media(max-width:700px){.footer-contact-link{font-size:9px;padding:9px 10px}}
