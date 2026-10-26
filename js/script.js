@@ -327,7 +327,7 @@ async function initShopPage() {
 
   const wanted = q.get('cat');
 
-  const search = (q.get('q') || '').toLowerCase();
+  let search = (q.get('q') || '').toLowerCase();
   const sortSelect = document.getElementById('sort-select');
   let sort = sortSelect?.value || 'newest';
 
@@ -389,6 +389,8 @@ async function initShopPage() {
     resetFilters?.addEventListener('click', () => {
       cat = 'all';
       max = 102000;
+      search = '';
+      window.history.replaceState({}, '', 'shop.html');
       if (r) r.value = '102000';
       const value = document.getElementById('price-max-val');
       const fill = document.getElementById('range-fill');
