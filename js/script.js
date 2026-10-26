@@ -236,6 +236,31 @@ function buildProductCard(p) {
 }
 
 /* ============================================================
+   HOME — FEATURED COLLECTION
+   ============================================================ */
+
+// Feature a curated small set at the top of the storefront.
+// Product data still comes from Supabase, so the admin workflow stays unchanged.
+function renderFeaturedProducts() {
+  const grid = document.getElementById('featured-grid');
+  if (!grid) return;
+
+  const featured = PRODUCTS.slice(0, 4);
+  if (!featured.length) {
+    grid.innerHTML = `
+      <div class="featured-empty">
+        <p class="section-label">The collection is being prepared</p>
+        <h3>Something lovely is on its way.</h3>
+        <p>Visit the complete collection or ask us about a custom piece for your space.</p>
+        <a class="btn btn-outline" href="shop.html">Explore the collection ↗</a>
+      </div>
+    `;
+    return;
+  }
+  grid.innerHTML = featured.map(buildProductCard).join('');
+}
+
+/* ============================================================
    WHATSAPP BUTTON HANDLER
    ============================================================ */
 
@@ -835,13 +860,7 @@ document.addEventListener(
           'featured-grid'
         );
 
-      if (g) {
-        g.innerHTML =
-          PRODUCTS
-            .slice(0, 4)
-            .map(buildProductCard)
-            .join('');
-      }
+      renderFeaturedProducts();
     }
   }
 );
