@@ -225,9 +225,10 @@ function buildProductCard(p) {
           </span>
         </a>
 
-        <p class="product-price">
-          ${price}
-        </p>
+        <div class="product-card-bottom">
+          <p class="product-price">${price}</p>
+          <button type="button" class="product-enquire-link" data-enquire-id="${escapeHtml(p.id)}" aria-label="Ask about ${name} on WhatsApp">Ask us <span aria-hidden="true">↗</span></button>
+        </div>
 
       </div>
 
