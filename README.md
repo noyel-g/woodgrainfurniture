@@ -83,3 +83,11 @@ Use the full number with country code, no `+`, spaces, or dashes (e.g. `91974684
 
 ## Note on Supabase's free tier
 A free Supabase project pauses itself after 7 days with zero activity. If that happens, log into your Supabase dashboard once and click "Restore" — it takes a few seconds and nothing is lost.
+
+## Storefront UI refresh
+
+The shared visual layer lives in `css/storefront-redesign.css`, loaded after the original stylesheet on the customer-facing pages. Keeping the redesign separate makes future visual tuning and rollback easier.
+
+The homepage now has an editorial hero, a short brand-story interlude, category imagery, a featured collection loaded from Supabase, and a custom-build CTA. Featured and shop product cards link to product details and have a direct WhatsApp enquiry action. Product data continues to come from the existing Supabase table, so the admin page and existing product workflow remain in place.
+
+After pulling the changes, verify the homepage, shop filters, product detail page, and custom-build form on desktop and mobile. No screenshot/browser QA or live Supabase/WhatsApp end-to-end test has been performed as part of these commits.
