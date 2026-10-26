@@ -328,6 +328,8 @@ async function initShopPage() {
   const wanted = q.get('cat');
 
   const search = (q.get('q') || '').toLowerCase();
+  const sortSelect = document.getElementById('sort-select');
+  let sort = sortSelect?.value || 'newest';
 
   if (
     wanted &&
@@ -348,7 +350,7 @@ async function initShopPage() {
   function render() {
     const a = PRODUCTS.filter(p =>
       (cat === 'all' || p.category === cat) &&
-      p.price <= max &&
+      Number(p.price ?? 0) <= max &&
       (
         !search ||
         `${p.name} ${p.category}`
@@ -356,6 +358,12 @@ async function initShopPage() {
           .includes(search)
       )
     );
+
+    a.sort((first, second) => {
+      if (sort === 'price-asc') return Number(first.price ?? 0) - Number(second.price ?? 0);
+      if (sort === 'price-desc') return Number(second.price ?? 0) - Number(first.price ?? 0);
+      return String(second.created_at || '').localeCompare(String(first.created_at || ''));
+    });
 
     const c = document.getElementById('products-count');
 
@@ -368,17 +376,27 @@ async function initShopPage() {
     g.innerHTML = a.length
       ? a.map(buildProductCard).join('')
       : `
-        <div
-          style="
-            grid-column:1/-1;
-            text-align:center;
-            padding:60px;
-            color:var(--text-muted)
-          "
-        >
-          No products match your filters.
+        <div class="products-empty-state">
+          <span class="products-empty-mark">↗</span>
+          <p class="section-label">A quieter corner of the collection</p>
+          <h2>No pieces found this time.</h2>
+          <p>Try another category or open up your price range.</p>
+          <button type="button" class="btn btn-outline" id="reset-product-filters">Reset filters</button>
         </div>
       `;
+
+    const resetFilters = document.getElementById('reset-product-filters');
+    resetFilters?.addEventListener('click', () => {
+      cat = 'all';
+      max = 102000;
+      if (r) r.value = '102000';
+      const value = document.getElementById('price-max-val');
+      const fill = document.getElementById('range-fill');
+      if (value) value.textContent = formatPrice(max);
+      if (fill) fill.style.width = '100%';
+      document.querySelectorAll('.cat-filter-item').forEach(item => item.classList.toggle('active', item.dataset.cat === 'all'));
+      render();
+    });
   }
 
   document
@@ -399,6 +417,11 @@ async function initShopPage() {
         render();
       });
     });
+
+  sortSelect?.addEventListener('change', () => {
+    sort = sortSelect.value;
+    render();
+  });
 
   const r = document.getElementById('price-range');
 
