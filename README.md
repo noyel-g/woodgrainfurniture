@@ -1,6 +1,6 @@
-# Wood & Grains Furniture — Website
+# WoodGrains Furniture — Website
 
-A simple showcase site. Every product links to a pre-filled **WhatsApp enquiry** — no cart, no checkout, no payments.
+A responsive furniture storefront with an editorial, warm-neutral visual identity. Customers can browse product collections, view detailed photos and descriptions, and start a pre-filled **WhatsApp enquiry** — no cart, checkout, or online payments.
 
 Products (name, price, category, photos, description, extra info) are managed through a real admin page at **`/admin.html`**, backed by a free [Supabase](https://supabase.com) project.
 
@@ -71,7 +71,7 @@ The anon key is safe to have in a public site — with RLS in place (step 3) it 
 - Use **Sign out** when you're done on a shared computer.
 
 ## What's shown where
-- **Shop page**: each product card shows its photo, name and price; the category sidebar shows a live count of products per category (no more manually-typed numbers). Material/colour filters have been removed.
+- **Shop page**: each product card shows its photo, name, price, and a direct enquiry action; category filters, live category counts, price filtering, and sorting are supported. Material/colour filters have been removed.
 - **Product page**: main photo + up to 3 additional view thumbnails (only the ones you've uploaded), name, price, description, and — if you filled it in — a separate "Product Information" section for extra detail.
 
 ## Changing the WhatsApp number
