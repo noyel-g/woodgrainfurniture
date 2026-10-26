@@ -375,15 +375,25 @@ async function initShopPage() {
 
     g.innerHTML = a.length
       ? a.map(buildProductCard).join('')
-      : `
-        <div class="products-empty-state">
-          <span class="products-empty-mark">↗</span>
-          <p class="section-label">A quieter corner of the collection</p>
-          <h2>No pieces found this time.</h2>
-          <p>Try another category or open up your price range.</p>
-          <button type="button" class="btn btn-outline" id="reset-product-filters">Reset filters</button>
-        </div>
-      `;
+      : PRODUCTS.length
+        ? `
+          <div class="products-empty-state">
+            <span class="products-empty-mark">↗</span>
+            <p class="section-label">A quieter corner of the collection</p>
+            <h2>No pieces found this time.</h2>
+            <p>Try another category or open up your price range.</p>
+            <button type="button" class="btn btn-outline" id="reset-product-filters">Reset filters</button>
+          </div>
+        `
+        : `
+          <div class="products-empty-state">
+            <span class="products-empty-mark">✳</span>
+            <p class="section-label">The collection is being prepared</p>
+            <h2>Something lovely is on its way.</h2>
+            <p>Ask us about a custom piece while the collection is being updated.</p>
+            <a class="btn btn-outline" href="custom-build.html">Start a custom enquiry ↗</a>
+          </div>
+        `;
 
     const resetFilters = document.getElementById('reset-product-filters');
     resetFilters?.addEventListener('click', () => {
@@ -544,7 +554,22 @@ async function initProductPage() {
     PRODUCTS.find(x => x.id === id) ||
     PRODUCTS[0];
 
-  if (!p) return;
+  if (!p) {
+    const grid = document.querySelector('.product-detail-grid');
+    if (grid) {
+      grid.innerHTML = `
+        <div class="products-empty-state product-not-found">
+          <span class="products-empty-mark">↗</span>
+          <p class="section-label">A piece not found</p>
+          <h2>This piece isn’t available to view right now.</h2>
+          <p>Return to the collection or tell us what kind of furniture you’re looking for.</p>
+          <a class="btn btn-primary" href="shop.html">Back to the collection</a>
+        </div>
+      `;
+    }
+    document.title = 'Furniture details — WoodGrains Furniture';
+    return;
+  }
 
   const set = (s, v) => {
     const e = document.querySelector(s);
