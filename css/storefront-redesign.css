@@ -271,3 +271,15 @@ footer .nav-logo{color:#fff9ed!important;font:22px 'DM Serif Display',serif}
 .section-label+.section-title em,.section-title em{font-style:italic}
 @media(max-width:1000px){.featured-grid,.featured-loading{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-grid .product-card:nth-child(4){display:none}}
 @media(max-width:700px){.featured-section{padding:0 0 59px}.featured-heading{align-items:flex-end;gap:12px}.featured-heading .section-title{font-size:31px}.featured-heading .section-copy{font-size:10px}.featured-heading .view-all{font-size:9px}.featured-grid,.featured-loading{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 11px}.featured-grid .product-card:nth-child(4){display:block}.featured-grid .product-name,.featured-grid .product-name-link{font-size:16px}.featured-grid .product-img-wrap:after{display:none}.featured-footnote{flex-direction:column;line-height:1.7}.featured-footnote span:last-child{font-size:9px}}
+
+.craft-note{border-bottom:1px solid #e5ded2;background:#eee8de}
+.craft-note-inner{display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:25px;padding-top:26px;padding-bottom:26px}
+.craft-note-index{font:8px 'DM Sans',sans-serif;letter-spacing:.13em;color:#9c8c77}
+.craft-note-inner>p{font:clamp(20px,2.5vw,30px)/1.33 'DM Serif Display',serif;color:#49483c;margin:0;letter-spacing:-.3px}
+.craft-note-inner>p em{font-weight:400;color:#9b7153}
+.craft-note-inner>a{justify-self:end;white-space:nowrap;border-bottom:1px solid #c6b49c;padding-bottom:6px;font-size:10px;color:#726b5d}
+.craft-note-inner>a span{color:#a16f4a;margin-left:9px}
+.featured-empty{grid-column:1/-1;padding:35px;background:#f0eade;text-align:center}
+.featured-empty h3{font:27px 'DM Serif Display',serif;font-weight:400;margin:6px 0 9px}
+.featured-empty>p:not(.section-label){font-size:11px;color:#81796b;margin-bottom:18px}
+@media(max-width:700px){.craft-note-inner{grid-template-columns:1fr auto;gap:12px;padding-top:20px;padding-bottom:20px}.craft-note-index{grid-column:1/-1;font-size:7px}.craft-note-inner>p{font-size:22px}.craft-note-inner>a{font-size:9px;grid-column:2;grid-row:2;align-self:end}}
