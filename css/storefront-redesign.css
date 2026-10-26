@@ -283,3 +283,13 @@ footer .nav-logo{color:#fff9ed!important;font:22px 'DM Serif Display',serif}
 .featured-empty h3{font:27px 'DM Serif Display',serif;font-weight:400;margin:6px 0 9px}
 .featured-empty>p:not(.section-label){font-size:11px;color:#81796b;margin-bottom:18px}
 @media(max-width:700px){.craft-note-inner{grid-template-columns:1fr auto;gap:12px;padding-top:20px;padding-bottom:20px}.craft-note-index{grid-column:1/-1;font-size:7px}.craft-note-inner>p{font-size:22px}.craft-note-inner>a{font-size:9px;grid-column:2;grid-row:2;align-self:end}}
+
+.nav-logo{font-family:'DM Serif Display',serif;font-weight:400;letter-spacing:-.8px}
+.product-card-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:5px}
+.product-card-bottom .product-price{margin:0}
+.product-enquire-link{display:inline-flex;align-items:center;gap:5px;padding:5px 0;border-bottom:1px solid #d0c0ab;color:#73624e;background:transparent;font-size:9px;white-space:nowrap;transition:color .2s,border-color .2s}
+.product-enquire-link span{color:#a16f4a;font-size:12px;transition:transform .2s}
+.product-enquire-link:hover{color:#354535;border-color:#72866f}
+.product-enquire-link:hover span{transform:translate(2px,-2px)}
+.featured-grid .product-enquire-link{font-size:9px}
+@media(max-width:700px){.product-card-bottom{flex-wrap:wrap;gap:6px}.product-enquire-link{font-size:8px}.product-card-bottom .product-price{font-size:11px}}
