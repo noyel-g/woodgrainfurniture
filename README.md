@@ -77,9 +77,9 @@ The anon key is safe to have in a public site — with RLS in place (step 3) it 
 ## Changing the WhatsApp number
 Open `js/script.js` and change:
 ```js
-const WHATSAPP_NUMBER = '9746841327';
+const WHATSAPP_NUMBER = '919746841327';
 ```
-Use the full number with country code, no `+`, spaces, or dashes (e.g. `919746841327`).
+Use the full number with country code, no `+`, spaces, or dashes. The current configured number is `919746841327`.
 
 ## Note on Supabase's free tier
 A free Supabase project pauses itself after 7 days with zero activity. If that happens, log into your Supabase dashboard once and click "Restore" — it takes a few seconds and nothing is lost.
