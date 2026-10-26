@@ -227,7 +227,7 @@ function buildProductCard(p) {
 
         <div class="product-card-bottom">
           <p class="product-price">${price}</p>
-          <button type="button" class="product-enquire-link" data-enquire-id="${escapeHtml(p.id)}" aria-label="Ask about ${name} on WhatsApp">Ask us <span aria-hidden="true">↗</span></button>
+          <button type="button" class="product-enquire-link" data-enquire-id="${escapeHtml(p.id)}" aria-label="Ask about ${name} on WhatsApp">Enquire <span aria-hidden="true">↗</span></button>
         </div>
 
       </div>
@@ -545,7 +545,7 @@ async function initProductPage() {
   );
 
   document.title =
-    `${p.name} — Wood & Grains Furniture`;
+    `${p.name} — WoodGrains Furniture`;
 
   buildGallery(p);
 
@@ -625,7 +625,7 @@ function customBuildWhatsApp() {
   );
 
   openWhatsApp(`
-Hello Wood & Grains Furniture, I would like to request a custom furniture build.
+Hello WoodGrains Furniture, I would like to request a custom furniture build.
 
 CUSTOM BUILD REQUEST
 Name: ${v('cf-name')}
@@ -855,11 +855,6 @@ document.addEventListener(
     if (p === 'home') {
 
       await loadProducts();
-
-      const g =
-        document.getElementById(
-          'featured-grid'
-        );
 
       renderFeaturedProducts();
     }
