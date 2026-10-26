@@ -2,7 +2,7 @@
    Products live in Supabase — edit them via /admin.html.
    No cart, no wishlist, no checkout: every product links straight to a WhatsApp enquiry. */
 
-const WHATSAPP_NUMBER = '9746841327';
+const WHATSAPP_NUMBER = '919746841327';
 let PRODUCTS = [];
 
 const formatPrice = n => '₹' + Number(n).toLocaleString('en-IN');
